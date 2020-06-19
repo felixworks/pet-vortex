@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { API_BASE_URL, bearerToken } from "./config.js";
+import { API_BASE_URL } from "./config.js";
 
 function App() {
   const [petInfo, setPetInfo] = useState({ pets: [] });
@@ -8,7 +8,6 @@ function App() {
     type: "Dog",
     breed: "Affenpinscher",
   });
-  const authString = `Bearer ${bearerToken}`;
 
   useEffect(() => {
     const fetchPets = async () => {
@@ -17,7 +16,7 @@ function App() {
         {
           method: "GET",
           headers: {
-            Authorization: authString,
+            Authorization: "", // Replace with bearer token
           },
         }
       )
