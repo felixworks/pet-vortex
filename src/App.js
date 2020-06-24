@@ -6,7 +6,7 @@ function App() {
   const [petInfo, setPetInfo] = useState({ pets: [] });
   const [petParams, setPetParams] = useState({
     type: "Dog",
-    breed: "Affenpinscher",
+    breed: "Affenpinscher"
   });
 
   useEffect(() => {
@@ -17,12 +17,12 @@ function App() {
           method: "GET",
           headers: {
             Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJBZTBTSktEdnpzeTE0RVA5MUZTdzFmamxuZXJCbFhjMzhuWHEyWll0U3JoZno2eGVtTyIsImp0aSI6IjAxYWIzZTkzOWZhNzhkYzAyZjJiZDhhMTVhMjgyOTBmNTBiMDllZmUwNDU3MjhlNTgzM2M0YzE2MTQyYTBlMzBkNWQzYjA0MGM3OWZmMzg2IiwiaWF0IjoxNTkyNTIwODA5LCJuYmYiOjE1OTI1MjA4MDksImV4cCI6MTU5MjUyNDQwOSwic3ViIjoiIiwic2NvcGVzIjpbXX0.NklxuHqSjIfq7cjYEjkixQu214gSmHfdpS6aC19mkB4dDUZMXGqNS10oImRnvh08rQnKSqvnVXfnU8N2lqExxJAP_uEGi2jN2gcgB0YYgP8opOz1sqdN-DVZ5_Srpiwp_A9GbmAkhBRk7h5EJAhg74YnQRfzAQHcq4UYNaAe1enLsu0mqPtyRgHWYAlU_falf4A36R_h8O8WYLbsznEYBhaB9ltldWaBNokZKP0Ga_7shnI1v101fmZ5j3QTkUiXRlObUfUMA12_EeGVDIdJI2JWZiA3Kmr9DASC6Zumyg8A0_WXyysKjRTuTuf5bA1nONiIsMn64lqKaX1GCTKqkg",
-          },
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY2MDUwYzIwMDM2ZjcwZjgzNWU5NTI5ZDllZTUzYzE5ZjhhYjVjYTViNGEzMzdjMzE3MTJmNThkNjcyZGE0OTVjZmFhNTlmNTJkNzA0MjlhIn0.eyJhdWQiOiJBZTBTSktEdnpzeTE0RVA5MUZTdzFmamxuZXJCbFhjMzhuWHEyWll0U3JoZno2eGVtTyIsImp0aSI6ImY2MDUwYzIwMDM2ZjcwZjgzNWU5NTI5ZDllZTUzYzE5ZjhhYjVjYTViNGEzMzdjMzE3MTJmNThkNjcyZGE0OTVjZmFhNTlmNTJkNzA0MjlhIiwiaWF0IjoxNTgxOTE0NTc0LCJuYmYiOjE1ODE5MTQ1NzQsImV4cCI6MTU4MTkxODE3NCwic3ViIjoiIiwic2NvcGVzIjpbXX0.ASTX-O3ZDzPi34GP-MRB-8-KuCU7qL3ZiShnhuwWgqLTIb3Y0Z9mJJGiEkZF6V3QOpBWRlACoSLEUcb1qFbg-Cj8pQTiaNK2rfMi5MWdPesyyePP6KeHXDP3prFgaNmt0dK13f6i2tKS8Ii9dDq72CndOc0RDsTmxWRABAhpRvSb6n6YCMyGTvm6CWzsFIR1pRhN8NQg9PqJ57TDP44zBQ0R8OFOc2Iw2e1Iu7lUZ4TbgWEVfcH17PGx7IRl_MxBN0m8GuEsClYrsVV1f2b8Tz1ZGbyiIekzcvpaeTNrmVC6WdioxEDa1zkoIca727rAQkvZQuZO0vVru5KHkmUeyA"
+          }
         }
       )
-        .then((response) => response.json())
-        .then((response) => setPetInfo({ pets: response.animals }));
+        .then(response => response.json())
+        .then(response => setPetInfo({ pets: response.animals }));
     };
     fetchPets();
   }, []);
@@ -35,7 +35,7 @@ function App() {
       <main>
         <ul>
           {petInfo
-            ? petInfo.pets.map((item) => (
+            ? petInfo.pets.map(item => (
                 <li key={item.id}>
                   <a href={item.url}>{item.name}</a>
                 </li>
