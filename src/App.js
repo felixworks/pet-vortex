@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     const fetchPets = async () => {
       const result = await fetch(
+        //TODO add petParams here and add the type and breed function to API
         `${API_BASE_URL}`,
         {
           method: "GET",
@@ -33,7 +34,7 @@ function App() {
           {petInfo
             ? petInfo.pets.map(item => (
                 <li key={item.id}>
-                  <a href={item.url}>{item.name}</a>
+                  <a href={item.url}>{item.name}<img src={item.photos[0].small} alt={"Dog photo " + item.id}/></a>
                 </li>
               ))
             : ""}
