@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchPets = async () => {
       const result = await fetch(
-        //TODO add petParams here and add the type and breed function to API
+        // TODO add petParams here and add the type and breed function to API
         `${API_BASE_URL}`,
         {
           method: "GET",
@@ -24,6 +24,7 @@ function App() {
     fetchPets();
   }, []);
 
+  // TODO create Tinder-style cards for each dog, and arrange them in a circle that aligns with the viewer. So one card is in focus, and you can see the next 1-2 cards on each side (like a roulette wheel)
   return (
     <div className="App">
       <header className="App-header">
