@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { API_BASE_URL } from "../config.js";
+import Card from "../Card/Card.js";
 
 function List() {
 
@@ -28,10 +29,13 @@ const [petInfo, setPetInfo] = useState({ pets: [] });
 return (
     <ul>
           {petInfo
-            ? petInfo.pets.map(item => (
-                <li key={item.id}>
+            ? petInfo.pets.map((item, index) => (
+              <>
+                <Card/>
+                <li key={item.id} className={index + "-list-item"}>
                   <a href={item.url}>{item.name}<img src={item.photos[0] ? item.photos[0].small :  ""} alt={"Dog photo " + item.id}/></a>
                 </li>
+              </>
               ))
             : ""}
         </ul>
